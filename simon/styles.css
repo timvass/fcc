@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
+
+$red:#CB2027;
+$blue:#0176BF;
+$yellow:#EEAD1C;
+$green:#018B62;
+$black:	#000000;
+$gray:#333333;
+
+//onoff button
+$blueBtn:#3193DE;
+//background of inner circle
+$innerB:#ECE7EE;
+//background of count
+$countB:#32050C;
+
+$startBtn:#FF0000;
+
+$btnbrd: border;
+//border inside
+$bordIn:12px solid $gray;
+$bordOut:20px solid $gray;
+$bordInner:12px solid $gray;
+$bordInMob :7px solid $gray;
+$bordOutMob:15px solid $gray;
+
+$font: 'Alfa Slab One';
+$font2:'VT323',monospace;
+//r sign
+$R:&#174;
+
+body,html{
+	margin:0;
+	padding:0;
+}
+*{
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+	display:grid;
+	height:100vh;
+  width:100vw;
+	grid-template-columns: 1fr 460px 1fr;
+  grid-template-rows: 1fr 460px  1fr;
+  
+}
+.inline{
+	display:inline;	
+}
+/*#wrap{
+	width:460px;
+	height:460px;
+	box-sizing:border-box;
+	border-radius:50%;
+	margin:0 auto;
+}*/
+#container{
+	display:grid;
+  grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+	max-width:460px;
+	max-height:460px;
+	grid-template-rows: 230px  230px;
+	grid-template-columns: 230px 230px;
+  
+}
+.button{
+	display:inline-block;
+	width:230px;
+	height:230px;
+	box-shadow: none;
+	border:4px solid $gray;
+}
+#b1{
+		border-top-right-radius: 100%;
+		background: $red;
+		border: $bordOut;
+		border-left:$bordIn;
+		border-bottom:$bordIn;
+	}
+	#b2{
+		grid-column:2/3;
+    grid-row:2/3;
+		border-bottom-right-radius: 100%;
+		background:$blue;
+		border: $bordOut;
+		border-top:$bordIn;
+		border-left: $bordIn;
+	}
+	#b3{
+	  grid-column:1/2;
+    grid-row:2/3;
+		border-bottom-left-radius: 100%;
+		background:$yellow;
+		border: $bordOut;
+		border-right:$bordIn;
+		border-top:$bordIn;
+	}
+	#b4{
+		border-top-left-radius: 100%;
+		background:$green;
+		border: $bordOut;
+		border-right:$bordIn;
+		border-bottom:$bordIn;
+	}
+//inner circle
+#innerWrap{
+	padding-left:7px;
+	padding-right:7px;
+	border:$bordInner;
+	width:230px;
+	height:230px;
+	border-radius:50%;
+	
+	grid-column:2/3;
+	
+	grid-row:2/3;
+	margin:auto;
+	
+	position:relative;
+	
+	background:$innerB;
+	#simon{
+		text-align:center;
+		font-size:2.6em;
+		font-family:$font;
+		margin-top:30px;
+		letter-spacing:1px;
+		margin-bottom:0px;
+	}
+	#strictLed{
+		margin-top:-7px;	
+		right:39px;
+		position:absolute;
+		width:10px;
+		height:10px;
+		background:$gray;
+		border-radius:50%;
+		border:2px solid $gray;
+	}
+	
+	sup{
+		/*position:absolute;
+		font-size:17px;
+		right:15px;
+		top:40px;*/
+		font-size:25px;
+	}
+	//"strip" in the center
+	.grid{
+		display:grid;
+		grid-template-columns: 60px 50px 50px;
+		grid-column-gap: 5px;
+		grid-template-rows: 5% 1px 1px;
+		justify-content:center;
+		align-items:center;
+		margin-top:0px;
+	#count{
+		background:$countB;
+		width:60px;
+		height:40px;
+		border-radius:10px;
+		border:3px solid $gray;
+		margin:0 auto;
+		color:$red;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		}
+		#countDisplay{
+			display:none;
+			font-size:30px;
+		}
+		.countDisplayOn{
+			display:inline;
+		}
+	#startBtn{
+		background:$startBtn;
+		border-radius:50%;
+		width:25px;
+		height:25px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+		}
+	#strict-btn{
+		background:yellow;
+		border-radius:50%;
+		width:25px;
+		height:25px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+		
+	}
+	.tag{
+		font-family:$font2;
+		font-size:1em;
+		font-weight:100;
+		text-align:center;
+		letter-spacing:0;
+	}
+}
+	
+}
+
+//on off switch part
+#onoff-strip{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	margin:0 auto;
+	width:100px;
+	align-items:center;
+	justify-content:space-around;
+	.inline{
+		display:inline;
+		font-family:$font2;
+		font-size:1em;
+	}
+	#onoff-box{
+		display:inline;
+		width:40px;
+		height:20px;
+		background:$black;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		justify-content:flex-start;
+		align-items:center;
+		#onoff-btn{
+			background:$blueBtn;
+			width:20px;
+			height:16px;
+			border-radius:3px;
+			cursor:pointer;
+			border:2px solid $gray;
+		}
+	}
+}
+#b1,#b2,#b3,#b4{
+	pointer-events:none;
+}
+#red-flash{
+	opacity:0.5;
+}
+//----------------------------------------------------------------------------
+@media screen and (max-width: 480px) {
+ body{
+	display:grid;
+	
+	grid-template-columns: 1fr 280px 1fr;
+  grid-template-rows: 1fr 280px  1fr;
+  
+}
+  #container{
+	display:grid;
+  grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+	max-width:280px;
+	max-height:280px;
+	grid-template-rows: 140px  140px;
+	grid-template-columns: 140px 140px;
+  
+}
+  .button{
+		display:block;
+		width:140px;
+		height:140px;
+		box-shadow: none;
+		border:1px solid $gray;
+	}
+	
+  #b1{
+		
+		border-top-right-radius: 100%;
+		background: $red;
+		border: $bordOutMob;
+		border-left:$bordInMob;
+		border-bottom:$bordInMob;
+	}
+  #b2{
+		grid-column:2/3;
+    grid-row:2/3;
+		border-bottom-right-radius: 100%;
+		background:$blue;
+		border: $bordOutMob;
+		border-top:$bordInMob;
+		border-left: $bordInMob;
+	}
+	#b3{
+	  grid-column:1/2;
+    grid-row:2/3;
+		border-bottom-left-radius: 100%;
+		background:$yellow;
+		border:$bordOutMob;
+		border-right:$bordInMob;
+		border-top:$bordInMob;
+	}
+	#b4{
+		border-top-left-radius: 100%;
+		background:$green;
+		border:$bordOutMob;
+		border-right:$bordInMob;
+		border-bottom:$bordInMob;
+	}
+	#inner-wrap{
+    margin:0;
+    padding:0;
+		padding-left:7px;
+    padding-right:7px;
+    border:$bordInMob;
+    width:175px;
+    height:175px;
+    border-radius:50%;
+    
+	margin:auto;
+	
+	position:relative;
+    background:$innerB;
+    p#simon{
+		font-size:1.4em;
+    margin-top:10px;
+	  }
+    #strict-led{
+		margin-top:-3px;	
+		right:28px;
+		position:absolute;
+		width:7px;
+		height:7px;
+		background:$gray;
+		border-radius:50%;
+		border:2px solid $gray;
+	  }
+    sup{
+      position:absolute;
+      font-size:8px;
+      right:30px;
+      top:15px;
+    }
+    //"strip" in the center
+	.grid{
+		display:grid;
+		grid-template-columns: 55px 30px 30px;
+		grid-column-gap: 10px;
+		grid-template-rows: 5% 1px 1px;
+		justify-content:center;
+		align-items:center;
+		margin-top:0px;
+  }
+	#count{
+		background:$countB;
+		width:25px;
+		height:25px;
+		border-radius:10px;
+		border:3px solid $gray;
+		margin:0 auto;
+		color:$red;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+    margin-right:15px;
+		}
+		#count-display{
+			display:none;
+			font-size:25px;
+		}
+		.count-display-on{
+			display:inline;
+		}
+	#start-btn{
+		background:$startBtn;
+		border-radius:50%;
+		width:20px;
+		height:20px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+		}
+	#strict-btn{
+		background:yellow;
+		border-radius:50%;
+		width:20px;
+		height:20px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+	}
+	.tag{
+		font-family:$font2;
+		font-size:1em;
+		font-weight:100;
+		text-align:center;
+		letter-spacing:0;
+	  }
+  }
+  }
+@media screen and (max-width: 320px) {
+ body{
+	display:grid;
+	
+	grid-template-columns: 1fr 250px 1fr;
+  grid-template-rows: 1fr 250px  1fr;
+ 
+}
+  #container{
+	display:grid;
+  grid-column-start:2;
+	grid-column-end:3;
+	grid-row-start:2;
+	grid-row-end:3;
+	max-width:280px;
+	max-height:280px;
+	grid-template-rows: 125px  125px;
+	grid-template-columns: 125px 125px;
+  
+}
+  .button{
+		display:block;
+		width:125px;
+		height:125px;
+		box-shadow: none;
+		border:1px solid $gray;
+	}
+	
+  #b1{
+		
+		border-top-right-radius: 100%;
+		background: $red;
+		border: $bordOutMob;
+		border-left:$bordInMob;
+		border-bottom:$bordInMob;
+	}
+  #b2{
+		grid-column:2/3;
+    grid-row:2/3;
+		border-bottom-right-radius: 100%;
+		background:$blue;
+		border: $bordOutMob;
+		border-top:$bordInMob;
+		border-left: $bordInMob;
+	}
+	#b3{
+	  grid-column:1/2;
+    grid-row:2/3;
+		border-bottom-left-radius: 100%;
+		background:$yellow;
+		border:$bordOutMob;
+		border-right:$bordInMob;
+		border-top:$bordInMob;
+	}
+	#b4{
+		border-top-left-radius: 100%;
+		background:$green;
+		border:$bordOutMob;
+		border-right:$bordInMob;
+		border-bottom:$bordInMob;
+	}
+	#innerWrap{
+    margin:0;
+    padding:0;
+		padding-left:7px;
+    padding-right:7px;
+    border:$bordInMob;
+    width:175px;
+    height:175px;
+    border-radius:50%;
+    
+	margin:auto;
+	
+	position:relative;
+    background:$innerB;
+    p#simon{
+		font-size:1.4em;
+    margin-top:10px;
+	  }
+    #strict-led{
+		margin-top:-3px;	
+		right:28px;
+		position:absolute;
+		width:7px;
+		height:7px;
+		background:$gray;
+		border-radius:50%;
+		border:2px solid $gray;
+	  }
+    sup{
+      position:absolute;
+      font-size:8px;
+      right:35px;
+      top:15px;
+    }
+    //"strip" in the center
+	.grid{
+		display:grid;
+		grid-template-columns: 55px 30px 30px;
+		grid-column-gap: 10px;
+		grid-template-rows: 5% 1px 1px;
+		justify-content:center;
+		align-items:center;
+		margin-top:0px;
+  }
+	#count{
+		background:$countB;
+		width:25px;
+		height:25px;
+		border-radius:10px;
+		border:3px solid $gray;
+		margin:0 auto;
+		color:$red;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+    margin-right:15px;
+		}
+		#count-display{
+			display:none;
+			font-size:25px;
+		}
+		.count-display-on{
+			display:inline;
+		}
+	#start-btn{
+		background:$startBtn;
+		border-radius:50%;
+		width:20px;
+		height:20px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+		}
+	#strict-btn{
+		background:yellow;
+		border-radius:50%;
+		width:20px;
+		height:20px;
+		border:5px solid $gray;
+		margin:0 auto;
+		pointer-events:none;
+	}
+	.tag{
+		font-family:$font2;
+		font-size:1em;
+		font-weight:100;
+		text-align:center;
+		letter-spacing:0;
+	  }
+  }
+  }
+  
+	
+   
+
+
+  
